@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>Smart Campus</h2>
+      <a href="#">Dashboard</a>
+      <a href="#">Presensi</a>
+      <a href="#">Mahasiswa</a>
+      <a href="#">Logout</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <div class="topbar">
+        <h3>Dashboard Presensi</h3>
+        <button class="btn-green" onclick="absen()">+ Absen Hari Ini</button>
+      </div>
+
+      <!-- CARDS -->
+      <div class="cards">
+        <div class="card">
+          <h3>Total Mahasiswa</h3>
+          <h1>120</h1>
+        </div>
+
+        <div class="card">
+          <h3>Hadir Hari Ini</h3>
+          <h1 id="hadir">0</h1>
+        </div>
+
+        <div class="card">
+          <h3>Persentase</h3>
+          <h1>85%</h1>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="list"></tbody>
+        </table>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display:none;">
+          Belum ada data kehadiran
+        </div>
+      </div>
+
+    </div>
+
+    <script src="../integration/app.js"></script>
+
+  </body>
+</html>

@@ -167,3 +167,68 @@ input:focus {
   from { transform: translateX(100px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+
+/* ===== TABLE WRAPPER ===== */
+.table-container {
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+thead {
+  background: #f8fafc;
+}
+
+th {
+  text-align: left;
+  padding: 14px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ROW */
+td {
+  padding: 14px;
+  font-size: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* HOVER EFFECT */
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ZEBRA STRIPING */
+tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  padding: 30px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* BADGE STATUS */
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: white;
+  display: inline-block;
+}
+
+.badge-success {
+  background: #10b981;
+}
