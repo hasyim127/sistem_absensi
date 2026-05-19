@@ -60,6 +60,18 @@ function loadData() {
     });
 }
 
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+
+  toast.innerText = message;
+  toast.style.display = "block";
+
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 2000);
+}
+
 // AUTO LOAD
 if (document.getElementById("list")) {
   loadData();
