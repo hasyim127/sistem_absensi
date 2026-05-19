@@ -4,7 +4,7 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+  $query = mysqli_query($conn, "SELECT * FROM pengguna WHERE username='$username'");
 
   $user = mysqli_fetch_assoc($query);
 
