@@ -13,13 +13,15 @@ if (loginForm) {
         password: document.getElementById("password").value
       })
     })
-    .then(res => res.json())
     .then(data => {
       if (data.status === "success") {
+        showToast("Login berhasil 🚀");
         localStorage.setItem("user_id", data.user_id);
-        window.location.href = "dashboard.html";
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
       } else {
-        alert("Login gagal");
+        showToast("Login gagal ❌");
       }
     });
   });
@@ -35,9 +37,8 @@ function absen() {
       user_id: userId
     })
   })
-  .then(res => res.json())
   .then(() => {
-    alert("Absen berhasil");
+    showToast("Absen berhasil ✅");
     loadData();
   });
 }
@@ -53,9 +54,12 @@ function loadData() {
       list.innerHTML = "";
 
       data.forEach(item => {
-        const li = document.createElement("li");
-        li.innerText = item.username + " - " + item.date;
-        list.appendChild(li);
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${item.username}</td>
+          <td>${item.date}</td>
+        `;
+        list.appendChild(row);
       });
     });
 }
