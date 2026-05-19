@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Smart Attendance</h2>
+      <p>Login Sistem Kampus</p>
 
-<body>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" class="btn-green">Login</button>
+      </form>
+    </div>
 
-<div class="login-box">
-  <h2>Smart Attendance</h2>
-  <p>Login Sistem Kampus</p>
+    <div class="toast" id="toast"></div>
 
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button type="submit" class="btn-green">Login</button>
-  </form>
-</div>
+    <script src="../integration/app.js"></script>
 
-<div class="toast" id="toast"></div>
-
-<script src="../integration/app.js"></script>
-
-</body>
+  </body>
 </html>
