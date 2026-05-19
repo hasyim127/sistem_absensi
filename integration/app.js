@@ -1,0 +1,66 @@
+let userId = null;
+
+// LOGIN
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch("../backend/login.php", {
+      method: "POST",
+      body: new URLSearchParams({
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "success") {
+        localStorage.setItem("user_id", data.user_id);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Login gagal");
+      }
+    });
+  });
+}
+
+// ABSEN
+function absen() {
+  userId = localStorage.getItem("user_id");
+
+  fetch("../backend/attendance.php", {
+    method: "POST",
+    body: new URLSearchParams({
+      user_id: userId
+    })
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Absen berhasil");
+    loadData();
+  });
+}
+
+// LOAD DATA
+function loadData() {
+  fetch("../backend/get_attendance.php")
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("list");
+      if (!list) return;
+
+      list.innerHTML = "";
+
+      data.forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = item.username + " - " + item.date;
+        list.appendChild(li);
+      });
+    });
+}
+
+// AUTO LOAD
+if (document.getElementById("list")) {
+  loadData();
+}
