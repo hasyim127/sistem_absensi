@@ -15,13 +15,13 @@ if (loginForm) {
     })
     .then(data => {
       if (data.status === "success") {
-        showToast("Login berhasil 🚀");
+        showToast("Login berhasil");
         localStorage.setItem("user_id", data.user_id);
         setTimeout(() => {
           window.location.href = "dashboard.html";
         }, 1000);
       } else {
-        showToast("Login gagal ❌");
+        showToast("Login gagal");
       }
     });
   });
@@ -38,7 +38,7 @@ function absen() {
     })
   })
   .then(() => {
-    showToast("Absen berhasil ✅");
+    showToast("Absen berhasil");
     loadData();
   });
 }
