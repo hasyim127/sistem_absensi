@@ -1,13 +1,10 @@
 # Dokumentasi Sistem Informasi
-
-Selamat datang pada dokumentasi Sistem Informasi ...
+Dokumentasi sistem absensi dibuat dan disusun oleh tim pengembang.
 
 ## Deskripsi Sistem
-
-Tuliskan deskripsi singkat sistem yang dibuat.
+Aplikasi ini dibangun dengan menggunakan framework, dan dikembangakan secara kolaborasi tim
 
 ## Tim Pengembang
-
-- Nama Anggota 1
-- Nama Anggota 2
-- Nama Anggota 3
+- Backend developer
+- Frontend developer
+- Integration developer
