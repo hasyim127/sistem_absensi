@@ -1,289 +1,285 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dokumentasi Sistem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi Sistem Absensi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+        --primary:#2563eb;
+        --primary-dark:#1d4ed8;
+        --secondary:#f8fafc;
+        --dark:#0f172a;
+        --gray:#64748b;
+        --border:#e2e8f0;
+        --white:#ffffff;
+        --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
 
-<style>
-:root{
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#f8fafc;
-    --dark:#0f172a;
-    --gray:#64748b;
-    --border:#e2e8f0;
-    --white:#ffffff;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    html{
+        scroll-behavior:smooth;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    body{
+        font-family:'Inter',sans-serif;
+        color:var(--dark);
+        background:#f8fafc;
+        line-height:1.7;
+    }
 
-html{
-    scroll-behavior:smooth;
-}
+    .container{
+        width:min(1200px,90%);
+        margin:auto;
+    }
 
-body{
-    font-family:'Inter',sans-serif;
-    color:var(--dark);
-    background:#f8fafc;
-    line-height:1.7;
-}
+    /* NAVBAR */
+    nav{
+        position:sticky;
+        top:0;
+        z-index:999;
+        background:rgba(255,255,255,.95);
+        backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--border);
+    }
 
-.container{
-    width:min(1200px,90%);
-    margin:auto;
-}
+    .nav-wrapper{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 0;
+    }
 
-/* NAVBAR */
-nav{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-}
+    .logo{
+        font-weight:700;
+        font-size:1.2rem;
+        color:var(--primary);
+    }
 
-.nav-wrapper{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 0;
-}
+    .nav-links{
+        display:flex;
+        gap:25px;
+    }
 
-.logo{
-    font-weight:700;
-    font-size:1.2rem;
-    color:var(--primary);
-}
+    .nav-links a{
+        text-decoration:none;
+        color:var(--gray);
+        font-weight:500;
+        transition:.3s;
+    }
 
-.nav-links{
-    display:flex;
-    gap:25px;
-}
+    .nav-links a:hover{
+        color:var(--primary);
+    }
 
-.nav-links a{
-    text-decoration:none;
-    color:var(--gray);
-    font-weight:500;
-    transition:.3s;
-}
+    /* HERO */
+    .hero{
+        padding:100px 0;
+    }
 
-.nav-links a:hover{
-    color:var(--primary);
-}
+    .hero-content{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+    }
 
-/* HERO */
-.hero{
-    padding:100px 0;
-}
+    .hero-text h1{
+        font-size:3rem;
+        line-height:1.1;
+        margin-bottom:20px;
+    }
 
-.hero-content{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
+    .hero-text p{
+        color:var(--gray);
+        margin-bottom:30px;
+    }
 
-.hero-text h1{
-    font-size:3rem;
-    line-height:1.1;
-    margin-bottom:20px;
-}
+    .btn{
+        display:inline-block;
+        background:var(--primary);
+        color:white;
+        padding:14px 24px;
+        border-radius:10px;
+        text-decoration:none;
+        font-weight:600;
+        transition:.3s;
+    }
 
-.hero-text p{
-    color:var(--gray);
-    margin-bottom:30px;
-}
+    .btn:hover{
+        background:var(--primary-dark);
+    }
 
-.btn{
-    display:inline-block;
-    background:var(--primary);
-    color:white;
-    padding:14px 24px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
+    .hero-card{
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:var(--shadow);
+    }
 
-.btn:hover{
-    background:var(--primary-dark);
-}
+    .hero-card h3{
+        margin-bottom:15px;
+    }
 
-.hero-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-}
+    /* SECTIONS */
+    section{
+        padding:80px 0;
+    }
 
-.hero-card h3{
-    margin-bottom:15px;
-}
+    .section-title{
+        text-align:center;
+        margin-bottom:50px;
+    }
 
-/* SECTIONS */
-section{
-    padding:80px 0;
-}
+    .section-title h2{
+        font-size:2rem;
+        margin-bottom:10px;
+    }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
+    .section-title p{
+        color:var(--gray);
+    }
 
-.section-title h2{
-    font-size:2rem;
-    margin-bottom:10px;
-}
+    /* CARDS */
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:25px;
+    }
 
-.section-title p{
-    color:var(--gray);
-}
+    .card{
+        background:white;
+        padding:25px;
+        border-radius:18px;
+        box-shadow:var(--shadow);
+    }
 
-/* CARDS */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+    .card h3{
+        margin-bottom:10px;
+    }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:var(--shadow);
-}
+    /* SYSTEM DESIGN */
+    .architecture{
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:var(--shadow);
+    }
 
-.card h3{
-    margin-bottom:10px;
-}
+    .flow{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:20px;
+        margin-top:25px;
+    }
 
-/* SYSTEM DESIGN */
-.architecture{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-}
+    .flow-box{
+        padding:20px 30px;
+        background:#eff6ff;
+        border:1px solid #bfdbfe;
+        border-radius:12px;
+        font-weight:600;
+    }
 
-.flow{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-top:25px;
-}
+    /* TEAM */
+    .team{
+        text-align:center;
+    }
 
-.flow-box{
-    padding:20px 30px;
-    background:#eff6ff;
-    border:1px solid #bfdbfe;
-    border-radius:12px;
-    font-weight:600;
-}
+    .avatar{
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:var(--primary);
+        color:white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:1.5rem;
+        font-weight:bold;
+        margin:auto auto 15px;
+    }
 
-/* TEAM */
-.team{
-    text-align:center;
-}
+    /* TIMELINE */
+    .timeline{
+        position:relative;
+    }
 
-.avatar{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:var(--primary);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.5rem;
-    font-weight:bold;
-    margin:auto auto 15px;
-}
+    .timeline-item{
+        background:white;
+        margin-bottom:20px;
+        padding:20px;
+        border-radius:15px;
+        box-shadow:var(--shadow);
+    }
 
-/* TIMELINE */
-.timeline{
-    position:relative;
-}
+    /* FAQ */
+    details{
+        background:white;
+        margin-bottom:15px;
+        padding:18px;
+        border-radius:12px;
+        box-shadow:var(--shadow);
+    }
 
-.timeline-item{
-    background:white;
-    margin-bottom:20px;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:var(--shadow);
-}
+    summary{
+        cursor:pointer;
+        font-weight:600;
+    }
 
-/* FAQ */
-details{
-    background:white;
-    margin-bottom:15px;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:var(--shadow);
-}
+    /* FOOTER */
+    footer{
+        background:var(--dark);
+        color:white;
+        text-align:center;
+        padding:40px 20px;
+    }
 
-summary{
-    cursor:pointer;
-    font-weight:600;
-}
+    /* RESPONSIVE */
+    @media(max-width:768px){
 
-/* FOOTER */
-footer{
-    background:var(--dark);
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
+    .hero-content{
+        grid-template-columns:1fr;
+    }
 
-/* RESPONSIVE */
-@media(max-width:768px){
+    .hero-text h1{
+        font-size:2.2rem;
+    }
 
-.hero-content{
-    grid-template-columns:1fr;
-}
+    .nav-links{
+        display:none;
+    }
 
-.hero-text h1{
-    font-size:2.2rem;
-}
-
-.nav-links{
-    display:none;
-}
-
-}
-</style>
-</head>
-<body>
-
-<nav>
-    <div class="container nav-wrapper">
-        <div class="logo">📘 Dokumentasi Sistem</div>
-
+    }
+  </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-wrapper">
+        <div class="logo">Dokumentasi Sistem</div>
         <div class="nav-links">
-            <a href="#panduan">Panduan</a>
-            <a href="#desain">Desain</a>
-            <a href="#teknologi">Teknologi</a>
-            <a href="#tim">Tim</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#faq">FAQ</a>
+          <a href="#panduan">Panduan</a>
+          <a href="#desain">Desain</a>
+          <a href="#teknologi">Teknologi</a>
+          <a href="#tim">Tim</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#faq">FAQ</a>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
 <header class="hero">
     <div class="container hero-content">
 
         <div class="hero-text">
-            <h1>Dokumentasi Sistem Terpusat</h1>
+            <h1>Dokumentasi Sistem Absensi</h1>
             <p>
                 Portal dokumentasi resmi yang berisi panduan penggunaan,
                 desain arsitektur, informasi teknis, roadmap, serta tim
@@ -297,7 +293,7 @@ footer{
 
         <div class="hero-card">
             <h3>Informasi Sistem</h3>
-            <p><strong>Nama Sistem:</strong> Sistem Informasi XYZ</p>
+            <p><strong>Nama Sistem:</strong> Sistem Absensi V.1</p>
             <p><strong>Versi:</strong> 1.0.0</p>
             <p><strong>Status:</strong> Production</p>
             <p><strong>Last Update:</strong> Juli 2026</p>
